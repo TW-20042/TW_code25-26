@@ -12,16 +12,19 @@ public class test_go extends LinearOpMode {
 
         Robot R = new Robot();
         R.init(hardwareMap);
+        R.reset();
         waitForStart();
-        while(opModeIsActive()){
-            if(gamepad1.dpad_right){
-            R.turn(90, 0.7);
-        } else if (gamepad1.dpad_left) {
-                R.turn(-90, 0.7);
+        while(opModeIsActive()) {
+            if (gamepad1.dpad_right) {
+                R.turn(90, 0.5, 0.9);
+            } else if (gamepad1.dpad_left) {
+                R.turn(-90, 0.5, 0.9);
+            }
+            if (gamepad1.dpad_down){
+                R.go_grd_IMU(0.6, 0,500, 0);
             }
 
-            }
             //R.go_grd_IMU(0.5, 0,1000, 0);
-
+        }
     }
 }

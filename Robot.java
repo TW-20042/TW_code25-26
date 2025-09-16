@@ -91,17 +91,17 @@ public class Robot {
 
 
     }
-    void turn(double ang,double mosh){
+    void turn(double ang,double mosh, double kp){
         reset();
         if(ang > 0) {
-            while (getAngle() < ang/2) {
+            while (getAngle() < ang*kp) {
                 rt_bk.setPower(mosh);
                 lt_fd.setPower(mosh);
                 rt_fd.setPower(mosh);
                 lt_bk.setPower(mosh);
             }
         }else {
-            while (getAngle() > ang/2) {
+            while (getAngle() > ang) {
                 rt_bk.setPower(-mosh);
                 lt_fd.setPower(-mosh);
                 rt_fd.setPower(-mosh);

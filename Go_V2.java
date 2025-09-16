@@ -50,16 +50,16 @@ public class Go_V2 extends LinearOpMode {
         lift_up.setPower(0.8);
         Thread.sleep(1000);
         lift_up.setPower(0);
-        R.turn(45, 0.3);
+        R.turn(45, 0.3, 2);
             Thread.sleep(500);
             for(int r = 0; r  < 3; r++) {
-                R.turn(-90, 0.3);
+                R.turn(-90, 0.3, 3);
                 Thread.sleep(500);
-                R.turn(90, 0.3);
+                R.turn(90, 0.3,3);
                 Thread.sleep(500);
             }
             Thread.sleep(500);
-            R.turn(-45, 0.3);
+            R.turn(-45, 0.3,3);
         lift_up.setPower(-0.6);
         Thread.sleep(1000);
         lift_up.setPower(0);
@@ -69,19 +69,19 @@ public class Go_V2 extends LinearOpMode {
             Thread.sleep(300);
             lift_up.setPower(-0.15);
         }
-        R.turn(45, 0.3);
+        R.turn(45, 0.3,3);
             Thread.sleep(500);
             for(int r = 0; r  < 2; r++) {
-                R.turn(-90, 0.3);
+                R.turn(-90, 0.3,3);
                 Thread.sleep(500);
-                R.turn(90, 0.3);
+                R.turn(90, 0.3,3);
                 Thread.sleep(500);
             }
             Thread.sleep(500);
-            R.turn(-90, 0.3);
+            R.turn(-90, 0.3,3);
             Thread.sleep(500);
         Thread.sleep(500);
-        R.turn(45, 0.3);
+        R.turn(45, 0.3,3);
         Thread.sleep(500);
             R.reset();
         Thread.sleep(500);
