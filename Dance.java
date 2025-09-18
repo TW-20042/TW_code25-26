@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name = "Dance")
-public class Go_V2 extends LinearOpMode {
+public class Dance extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         Robot R = new Robot();

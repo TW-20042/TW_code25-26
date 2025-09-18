@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.hardware.Servo;
 
 
@@ -10,26 +11,22 @@ public class Go extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
 
-        Robot R = new Robot();
+        Robot R = new Robot(); // подключение управления робота(подключение класса)
         R.init(hardwareMap);
-        waitForStart();
-        R.reset();
-        Servo grab;
-        grab = hardwareMap.get(Servo.class, "grab");
+        waitForStart();        // ожиданинъе запуска
+        R.reset();             // обнуление атчиков
         float p_rt_bk = 0;
         float p_rt_fd = 0;
         float p_lt_fd = 0;
-        float p_lt_bk = 0;
-        while (opModeIsActive()) {
-            //telemetry.addData("IMU", R.getAngle());
-            //telemetry.addData("Delta", R.delta);
-            //telemetry.update();
+        float p_lt_bk = 0;     //переменные для скорости моторов
+        while (opModeIsActive()) { //пока запущен код работать(для правильного выключеня робота)
+
             if (gamepad1.dpad_right) {
                 R.turn_P(90, 0.8, 0.09);
-            }
+            } //поворот на 90 при нажатии правой кнопки
             if (gamepad1.dpad_left) {
                 R.turn_P(-90, 0.8, 0.09);
-            }
+            } //поворот на 90 при нажатии левой кнопки
             /*if (gamepad1.y) {
                 R.stabel(0.8, 0.09); Stabel работоет криво, потом переписать
             }*/
@@ -41,7 +38,7 @@ public class Go extends LinearOpMode {
             //telemetry.update();
             R.Slt.setPosition(((gamepad2.right_stick_x - gamepad2.right_stick_y)*0.3)+0.5);
             R.Srt.setPosition(((gamepad2.right_stick_x + gamepad2.right_stick_y)*0.3)+0.5);
-            grab.setPosition(gamepad2.left_trigger*0.5);
+            R.grab.setPosition(gamepad2.left_trigger*0.5);
             if (gamepad1.right_bumper) {
                 double er = 0 - R.getAngle();
                 float P = (float) (er / 100);
