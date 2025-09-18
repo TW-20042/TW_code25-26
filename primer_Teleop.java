@@ -13,7 +13,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 //Устанавливаем тип программы как TeleOp(Управляемого периуда) и задаем его название
 @TeleOp(name = "Primer_TeleOp")
 //Объявляем класс наследуюший LinerOpMode
-public class Porkovka_zona_setei extends LinearOpMode {
+public class primer_Teleop extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         // создаем переменные для каждого мотора, где будет считаться мощность мотора
